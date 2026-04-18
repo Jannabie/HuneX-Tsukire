@@ -1,5 +1,6 @@
 > [!TIP]
-> **Alternative** Gunakan [TsukiRe-Translator](https://github.com/Jannabie/TsukiRe-translation) untuk mengedit teks langsung melalui GUI (grid editor) tanpa perlu konversi ke file `.txt` terlebih dahulu.
+> **Alternative:**
+> Gunakan [TsukiRe-Translator](https://github.com/Jannabie/TsukiRe-translation) untuk mengedit teks langsung melalui GUI (grid editor) tanpa perlu konversi ke file `.txt` terlebih dahulu.
 
 # mrg_tool — Tsukihime Remake Script Extractor & Repacker
 
