@@ -23,7 +23,6 @@ Alat utama untuk menerjemahkan tanpa perlu berurusan dengan file teks mentah sec
 
 ## Cara Penggunaan
 
-### A. Menggunakan Translator GUI (Rekomendasi)
 1. Jalankan `tsuki_trans.py`.
 2. Buka file `script_text.mrg`.
 3. Pilih rute/scene pada panel kiri, lalu mulai menerjemahkan di kolom kanan.
