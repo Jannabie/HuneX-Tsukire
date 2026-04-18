@@ -9,7 +9,7 @@ Tool spesialis untuk menangani file `script_text.mrg` pada game **Tsukihime -A p
 ---
 
 ## Update: Rute Terorganisir
-Kabar baik! Script teks hasil ekstraksi kini telah **berhasil disortir**. Kamu bisa menemukan file teks yang sudah dipisahkan berdasarkan alur cerita untuk mempermudah alur kerja penerjemahan:
+Script teks hasil ekstraksi sekarang **berhasil disortir**. Kamu bisa menemukan file teks yang sudah dipisahkan berdasarkan alur cerita untuk mempermudah alur kerja penerjemahan:
 - **Common Route**
 - **Arcueid Route**
 - **Ciel Route**
