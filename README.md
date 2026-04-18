@@ -31,4 +31,6 @@ Alat ini menggunakan logika *repacking* khusus untuk membangun ulang arsip MZP t
 ## Cara Pakai
 
 ### 1. Mode GUI
-J
+Jalankan langsung untuk membuka jendela antarmuka (memerlukan `tkinter`):
+```bash
+python mrg_tool.py
