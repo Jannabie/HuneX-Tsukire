@@ -1,3 +1,6 @@
+> [!TIP]
+> **Alternative** Gunakan [TsukiRe-Translator](https://github.com/Jannabie/TsukiRe-translation) untuk mengedit teks langsung melalui GUI (grid editor) tanpa perlu konversi ke file `.txt` terlebih dahulu.
+
 # mrg_tool — Tsukihime Remake Script Extractor & Repacker
 
 Tool spesialis untuk menangani file `script_text.mrg` pada game **Tsukihime -A piece of blue glass moon-** (Nintendo Switch). Mendukung penuh format arsip MZP (`mrgd00`) dan encoding UTF-8 untuk kebutuhan lokalisasi.
