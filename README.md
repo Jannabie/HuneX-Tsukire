@@ -1,30 +1,56 @@
-# TsukiRe-Translator & mrg_tool
+# mrg_tool — Tsukihime Remake Script Extractor & Repacker
 
-Kumpulan alat (tools) untuk proses lokalisasi game **Tsukihime -A piece of blue glass moon-** (Nintendo Switch). Mendukung ekstraksi, pengeditan teks secara langsung (GUI), hingga pengemasan ulang (*repacking*) ke format aslinya.
+Tool spesialis untuk menangani file `script_text.mrg` pada game **Tsukihime -A piece of blue glass moon-** (Nintendo Switch). Mendukung penuh format arsip MZP (`mrgd00`) dan encoding UTF-8 untuk kebutuhan lokalisasi.
 
 ---
 
-## 1. TsukiRe-Translator (GUI Editor)
-Alat utama untuk menerjemahkan tanpa perlu berurusan dengan file teks mentah secara manual. Memungkinkan pengeditan langsung dengan tampilan dua kolom yang intuitif.
+## Update: Rute Terorganisir
+Kabar baik! Script teks hasil ekstraksi kini telah **berhasil disortir**. Kamu bisa menemukan file teks yang sudah dipisahkan berdasarkan alur cerita untuk mempermudah alur kerja penerjemahan:
+- **Common Route**
+- **Arcueid Route**
+- **Ciel Route**
 
-### Preview Interface
+---
+
+## Perbandingan Visual
+
+<div align="center">
+  <table style="margin-left: auto; margin-right: auto;">
+    <tr>
+      <td align="center"><b>Sebelum (Original Japanese)</b></td>
+      <td align="center"><b>Sesudah (Indonesian Patch)</b></td>
+    </tr>
+    <tr>
+      <td><kbd><img src="https://i.imgur.com/Fl6iTqW.png" width="350"></kbd></td>
+      <td><kbd><img src="https://i.imgur.com/eEtdYFB.jpeg" width="350"></kbd></td>
+    </tr>
+  </table>
+</div>
+
+### Preview Format Teks (.txt)
+Hasil ekstraksi mempertahankan ID Offset agar proses *repacking* tetap presisi dan tidak merusak pointer asli game.
+
 <p align="center">
   <kbd>
-    <img src="https://i.imgur.com/wxw2gl5.png" width="750" alt="GUI Preview">
+    <img src="https://i.imgur.com/yALew5y.png" width="450" alt="Preview TXT">
   </kbd>
+  <br>
+  <i>Setiap baris teks dikaitkan dengan offset unik untuk menjamin integritas data.</i>
 </p>
 
-**Fitur:**
-- **Visual Divider:** Garis pemisah vertikal antara kolom Original dan Translation untuk keterbacaan maksimal.
-- **Direct Editing:** Klik dua kali pada kolom terjemahan untuk mengedit teks secara instan.
-- **Route Tree:** Navigasi berdasarkan rute (**Arcueid**, **Ciel**, **Common**) yang sudah disortir otomatis menggunakan `scene_map.json`.
-- **Live Search:** Mencari baris dialog tertentu dengan cepat menggunakan kata kunci.
-- **Project System:** Menyimpan progres kerja dalam format `.tsproj` sebelum di-patch ke game.
+---
+
+## Fitur Teknis Repacker
+Alat ini menggunakan logika rekonstruksi khusus untuk membangun ulang arsip MZP tanpa merusak struktur internal engine:
+- **Auto-Offset Calculation:** Secara otomatis menghitung ulang seluruh tabel pointer saat panjang teks berubah (mencegah game *crash*).
+- **10-Section Management:** Menangani rekonstruksi 10 bagian utama dalam arsip secara mendalam, termasuk penyelarasan byte (*byte alignment*).
+- **Sector Precision:** Mengikuti standar sektor `0x800` untuk memastikan kompatibilitas penuh pada emulator maupun hardware Switch asli.
+
+---
 
 ## Cara Penggunaan
 
-1. Jalankan `tsuki_trans.py`.
-2. Buka file `script_text.mrg`.
-3. Pilih rute/scene pada panel kiri, lalu mulai menerjemahkan di kolom kanan.
-4. Gunakan menu **File > Patch MRG** untuk menerapkan terjemahan ke file game.
-
+### 1. Mode GUI
+Jalankan skrip langsung untuk membuka jendela antarmuka (memerlukan `tkinter`):
+```bash
+python mrg_tool.py
