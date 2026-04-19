@@ -13,6 +13,7 @@ Script teks hasil ekstraksi sekarang **berhasil disortir**. Hasilnya akan terbag
 - **Common Route**
 - **Arcueid Route**
 - **Ciel Route**
+- **QA**
 
 ---
 
