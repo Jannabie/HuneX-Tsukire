@@ -14,6 +14,9 @@ Hasil ekstraksi diorganisir berdasarkan route sehingga lebih mudah dinavigasi: *
 
 ---
 
+## ⚠️ Catatan Penting
+* **Game Dump:** Game harus di-dump terlebih dahulu secara mandiri untuk mendapatkan file yang diperlukan.
+* **Versi Game:** Tool ini hanya bisa dilakukan dan berfungsi pada **Versi Jepang**.
 ## Perbandingan Hasil Patch
 
 <table>
