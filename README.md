@@ -1,31 +1,25 @@
-# TsukiRe-mrg-txt
+# HuneX-Tsukire
+A tool for extracting and repacking the `script_text.mrg` file from **Tsukihime -A piece of blue glass moon-** (Nintendo Switch).
 
-Tool untuk mengekstrak dan merepack file `script_text.mrg` dari game **Tsukihime -A piece of blue glass moon-** (Nintendo Switch).
-
-> **Alternatif lebih mudah:** Gunakan [TsukiRe-Translator](https://github.com/Jannabie/TsukiRe-translation) jika ingin mengedit teks langsung lewat GUI tanpa perlu konversi ke file `.txt` terlebih dahulu.
-
----
-
-## Apa Ini?
-
-`script_text.mrg` adalah file arsip format MZP (`mrgd00`) yang menyimpan seluruh teks dialog game dalam encoding UTF-8. Tool ini mengekstrak isi arsip menjadi file `.txt` yang bisa diedit, lalu merepacknya kembali ke format MRG yang kompatibel dengan game.
-
-Hasil ekstraksi diorganisir berdasarkan route sehingga lebih mudah dinavigasi: **Common Route**, **Arcueid Route**, **Ciel Route**, dan **QA**. Setiap baris teks dalam file hasil ekstrak dikaitkan dengan ID offset uniknya agar proses repack bisa menghitung ulang seluruh pointer secara presisi tanpa merusak struktur internal engine.
+> **Easier alternative:** Use [TsukiRe-Translator](https://github.com/Jannabie/TsukiRe-translation) if you want to edit the text directly through a GUI without needing to convert it to a `.txt` file first.
 
 ---
+## What Is This?
+`script_text.mrg` is an MZP-format archive file (`mrgd00`) that stores all of the game's dialogue text in UTF-8 encoding. This tool extracts the archive's contents into an editable `.txt` file, then repacks it back into an MRG format compatible with the game.
 
-## ⚠️ Catatan Penting
-* **Game Dump:** Game harus di-dump terlebih dahulu secara mandiri untuk mendapatkan file yang diperlukan.
-* **Versi Game:** Tool ini hanya bisa dilakukan dan berfungsi pada **Versi Jepang**.
+The extracted output is organized by route for easier navigation: **Common Route**, **Arcueid Route**, **Ciel Route**, and **QA**. Each line of text in the extracted file is linked to its unique offset ID so that the repacking process can recalculate all pointers precisely without breaking the engine's internal structure.
 
 ---
-## Perbandingan Hasil Patch
+## Important Notes
+* **Game Dump:** The game must first be dumped independently to obtain the required files.
+* **Game Version:** This tool only works on and is compatible with the **Japanese Version**.
 
-
+---
+## Patch Result Comparison
 <table>
   <tr>
-    <th align="center">Sebelum — Teks Jepang Original</th>
-    <th align="center">Sesudah — Patch Indonesia</th>
+    <th align="center">Before — Original Japanese Text</th>
+    <th align="center">After — English Patch</th>
   </tr>
   <tr>
     <td><img src="https://i.imgur.com/Fl6iTqW.png" width="350"></td>
@@ -34,57 +28,47 @@ Hasil ekstraksi diorganisir berdasarkan route sehingga lebih mudah dinavigasi: *
 </table>
 
 ---
-
-## Struktur File
-
-| File | Peran |
+## File Structure
+| File | Role |
 |---|---|
-| `mrg_tool.py` | Tool utama — ekstrak dan repack MRG via GUI atau CLI |
-| `mrg_editor.py` | Editor teks sederhana untuk file hasil ekstrak |
-| `scene_map.json` | Peta offset ke nama scene, dibutuhkan untuk organisasi per route |
+| `mrg_tool.py` | Main tool — extracts and repacks MRG via GUI or CLI |
+| `mrg_editor.py` | Simple text editor for the extracted files |
+| `scene_map.json` | Offset-to-scene-name map, required for per-route organization |
 
 ---
+## How to Use
 
-## Cara Pakai
-
-### Mode GUI
-
-Jalankan langsung untuk membuka antarmuka grafis:
+### GUI Mode
+Run it directly to open the graphical interface:
 
 ```bash
 python mrg_tool.py
 ```
 
-Buka `script_text.mrg` lewat tombol yang tersedia, pilih folder output, lalu klik Extract. Setelah file `.txt` selesai diedit, buka kembali tool dan gunakan fungsi Repack untuk menghasilkan MRG baru.
+Open `script_text.mrg` using the available button, choose an output folder, then click Extract. Once the `.txt` file is finished being edited, reopen the tool and use the Repack function to generate a new MRG.
 
-### Mode CLI
+### CLI Mode
 
 ```bash
-# Ekstrak MRG ke folder teks
+# Extract MRG into a text folder
 python mrg_tool.py extract script_text.mrg output/
 
-# Repack folder teks kembali ke MRG
+# Repack the text folder back into MRG
 python mrg_tool.py repack output/ script_text_patched.mrg
 ```
 
 ---
+## Installing the Patch into the Game (LayeredFS)
+Place the repacked `script_text.mrg` at the following path depending on the emulator, without modifying the original ROM file:
 
-## Memasang Patch ke Game (LayeredFS)
+**Yuzu:** `%AppData%\Roaming\yuzu\load\010064101344A000\[Mod Name]\romfs\script\`
 
-Letakkan `script_text.mrg` hasil repack di path berikut sesuai emulatornya, tanpa mengubah file ROM asli:
-
-**Yuzu:** `%AppData%\Roaming\yuzu\load\010064101344A000\[Nama Mod]\romfs\script\`
-
-**Ryujinx:** `%AppData%\Roaming\Ryujinx\mods\contents\010064101344a000\[Nama Mod]\romfs\script\`
+**Ryujinx:** `%AppData%\Roaming\Ryujinx\mods\contents\010064101344a000\[Mod Name]\romfs\script\`
 
 ---
-
 ## Requirements
-
-Python 3.8 atau lebih baru. `tkinter` dibutuhkan untuk mode GUI dan sudah terinstall otomatis bersama Python di Windows.
+Python 3.8 or newer. `tkinter` is required for GUI mode and is automatically installed alongside Python on Windows.
 
 ---
-
 ## Disclaimer
-
-Tool ini dibuat untuk keperluan edukasi dan lokalisasi personal. Gunakan sesuai aturan copyright dan Terms of Service dari game original.
+This tool is created for educational and personal localization purposes. Use it in accordance with the copyright rules and Terms of Service of the original game.
