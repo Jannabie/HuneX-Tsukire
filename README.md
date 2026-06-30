@@ -1,7 +1,7 @@
 # HuneX-Tsukire
 A tool for extracting and repacking the `script_text.mrg` file from **Tsukihime -A piece of blue glass moon-** (Nintendo Switch).
 
-> **Easier alternative:** Use [TsukiRe-Translator](https://github.com/Jannabie/TsukiRe-translation) if you want to edit the text directly through a GUI without needing to convert it to a `.txt` file first.
+> **Easier alternative:** Use [HuneX-TsukireGUI](https://github.com/Jannabie/TsukiRe-translation) if you want to edit the text directly through a GUI without needing to convert it to a `.txt` file first.
 
 ---
 ## What Is This?
